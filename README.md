@@ -25,7 +25,7 @@ fn main():
 
 ### Customizations
 
-```python–
+```python
 from time import sleep
 from mopro import progress_bar
 
@@ -47,7 +47,7 @@ fn main():
 
 ## Remarks
 
-- __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo. Hillarious name - love it 🔥–
+- __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo. Hillarious name - love it 🔥
 
 
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
