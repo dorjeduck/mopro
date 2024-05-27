@@ -74,7 +74,7 @@ fn main():
 ## Remarks
 
 - __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo. Hillarious name - love it 🔥
-- For the sake of flexibility, the callback function has to be defined as a closure. If this approach poses any limitations for you, please let us know.
+- __Callback as Closure:__ For the sake of flexibility, the callback function has to be defined as a closure. If this approach poses any limitations for you, please let us know.
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
 
 ## License
