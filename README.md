@@ -4,7 +4,7 @@ A lightweight and customizable progress bar for Mojo, ideal for tracking the pro
 
 ## Usage
 
-In its simplest usage, you specify the total number of iterations and provide a callback function that will be executed during each iteration:
+In its simplest usage, you specify the total number of iterations and provide a callback function that will be called for each iteration:
 
 ```rust
 from time import sleep
@@ -42,7 +42,7 @@ fn main():
 
 ## Remarks
 
-- __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Python.
+- __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo.
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
 
 ## License
