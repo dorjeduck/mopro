@@ -4,7 +4,7 @@ A lightweight and customizable progress bar for Mojo, meant for tracking the pro
 
 ## Usage
 
-In its simplest usage, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
+In its simplest use case, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
 
 ```python
 from time import sleep
