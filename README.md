@@ -35,6 +35,7 @@ from mopro import progress_bar
 fn main():
     fn one_step(i: Int) -> Bool:
         sleep(0.01)
+        # your operations ...
         return i<197
 
     progress_bar(
