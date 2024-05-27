@@ -1,6 +1,6 @@
 # progressbar.🔥
 
-A lightweight and customizable progress bar for Mojo, ideal for tracking the progress of long-running operations and loops.
+A lightweight and customizable progress bar for Mojo, ideal for tracking the progress of long-running operations in loops.
 
 ## Usage
 
