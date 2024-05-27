@@ -4,21 +4,21 @@ A lightweight and customizable progress bar for Mojo, meant for tracking the pro
 
 ## Usage
 
-In its simplest usage, you specify the total number of iterations and provide a callback function that will be called for each iteration:
+In its simplest usage, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
 
 ```python
 from time import sleep
 from mopro import progress_bar
 
 fn main():
+    
+    @parameter
     fn one_step(i: Int) -> Bool:
         sleep(0.01)
-        # your operations ...
         return True
 
-    progress_bar(
-        total=256,
-        callback=one_step
+    progress_bar[one_step](
+        total=256
     )
 ```
 
@@ -34,13 +34,15 @@ from time import sleep
 from mopro import progress_bar
 
 fn main():
+
+    var stop = 197
+    @parameter
     fn one_step(i: Int) -> Bool:
         sleep(0.01)
-        return i<197
+        return i<stop
 
-    progress_bar(
-        total=256,
-        callback=one_step
+    progress_bar[one_step](
+        total=256
     )
 ```
 
@@ -51,13 +53,13 @@ from time import sleep
 from mopro import progress_bar
 
 fn main():
+    @parameter
     fn one_step(i: Int) -> Bool:
         sleep(0.01)
         return True
         
-    progress_bar(
+    progress_bar[one_step](
         total=256,
-        callback=one_step, 
         prefix="Epoch:", 
         bar_size=20,
         bar_fill = "🔥",

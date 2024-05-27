@@ -6,9 +6,8 @@ from mopro.utils import (
     mult_string,
 )
 
-fn progress_bar(
+fn progress_bar[callback: fn (Int) capturing -> Bool](
     total: Int,
-    callback: fn (Int) -> Bool,
     prefix: String = "",
     bar_size: Int = 50,
     bar_fill: String = "█",
