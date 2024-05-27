@@ -15,6 +15,7 @@ fn main():
     @parameter
     fn one_step(i: Int) -> Bool:
         sleep(0.01)
+        # your operations here
         return True
 
     progress_bar[one_step](
