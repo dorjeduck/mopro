@@ -11,9 +11,9 @@ from time import sleep
 from mopro import progress_bar
 
 fn main():
-    fn one_step(i: Int):
+    fn one_step(i: Int) -> Bool:
         sleep(0.01)
-        # your operations here
+        return True
 
     progress_bar(
         total=256,
@@ -23,6 +23,26 @@ fn main():
 
 ![example1.mojo](./imgs/example1.png)
 
+### Terminating the loop
+
+When the callback function returns `False`, the loop will terminate.
+
+
+```python
+from time import sleep
+from mopro import progress_bar
+
+fn main():
+    fn one_step(i: Int) -> Bool:
+        sleep(0.01)
+        return i<197
+
+    progress_bar(
+        total=256,
+        callback=one_step
+    )
+```
+
 ### Customizations
 
 ```python
@@ -30,8 +50,9 @@ from time import sleep
 from mopro import progress_bar
 
 fn main():
-    fn one_step(i: Int):
+    fn one_step(i: Int) -> Bool:
         sleep(0.01)
+        return True
         
     progress_bar(
         total=256,

@@ -8,7 +8,7 @@ from mopro.utils import (
 
 fn progress_bar(
     total: Int,
-    callback: fn (Int) -> None,
+    callback: fn (Int) -> Bool,
     prefix: String = "",
     bar_size: Int = 50,
     bar_fill: String = "█",
@@ -72,5 +72,6 @@ fn progress_bar(
 
     show(0)
     for step in range(total):
-        callback(step)
+        if not callback(step):
+            break
         show(step + 1)
