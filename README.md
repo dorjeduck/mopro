@@ -49,6 +49,8 @@ fn main():
 
 ### Customizations
 
+Some basic customization options are availabe right now.
+
 ```python
 from time import sleep
 from mopro import progress_bar
@@ -71,6 +73,29 @@ fn main():
 
 ![example2.mojo](./imgs/example2.png)
 
+## vectorize_bar
+
+The use of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` function to our repository.
+
+In the following example, the one_step method will be called nine times with a width parameter of 16, where the argument i increases by 16 with each call. This is followed by 15 additional calls with a width parameter of 1, with i increasing by 1 each time. We adjusted the sleep time based on the width value to better visualize the process.
+
+```python
+from mopro import vectorize_bar
+
+alias simd_width=16
+
+fn main():
+    @parameter
+    fn one_step[width:Int](i: Int) -> Bool:
+        sleep(0.1 * width)
+        return True
+       
+    vectorize_bar[one_step,simd_width](
+        total=9*16+15
+    )
+```
+
+
 ## Remarks
 
 - __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo. Hillarious name - love it 🔥
@@ -79,6 +104,8 @@ fn main():
 
 ## Changelog
 
+- 2024.05.28
+  - Added `vectorize_bar`
 - 2024.05.27
   - Initial repository setup and commit.
 
