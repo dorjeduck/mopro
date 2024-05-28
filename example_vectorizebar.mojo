@@ -11,5 +11,5 @@ fn main():
         return True
        
     vectorize_bar[one_step,simd_width](
-        total=144+15
+        total=9*16+15
     )
