@@ -70,7 +70,7 @@ fn vectorize_bar[callback: fn[Int](Int,/) capturing -> Bool,nelts:Int](
         var elapsed_time = (now() - start) / 1e9
         var elapsed_str = format_seconds(int(elapsed_time))
 
-        var rate = (step + 1) / elapsed_time if elapsed_time > 0 else 0
+        var rate = (step + 1) / elapsed_time if elapsed_time > 0 and step > 0 else 0
         var rate_str = format_float(rate) + " it/s"
 
         var remaining_time = (total - step) / rate if rate > 0 else 0
