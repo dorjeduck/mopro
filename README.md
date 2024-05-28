@@ -75,7 +75,7 @@ fn main():
 
 ## Vectorize Bar
 
-The use of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` method to our repository.
+The usage of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` method to our repository.
 
 In the following example, the `vectorized_step` method will be called nine times with a `width` parameter of 16, where the argument `i` increases by 16 with each call. This is followed by 15 additional calls with a `width` parameter of 1, with `i` increasing by 1 each time. The functionality matches that of Mojo's `vectorize` method.
 
