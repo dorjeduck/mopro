@@ -1,4 +1,5 @@
 from time.time import sleep, now
+from mopro.bar_printer import BarPrinter
 from mopro.utils import (
     format_float,
     format_seconds,
@@ -51,9 +52,17 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
         bar_empty: Bar empty character. (default: "░")
     """
 
+    var bar_settings = BarPrinter(
+        total,
+        prefix,
+        postfix,
+        bar_size,
+        bar_fill,
+        bar_empty
+    )
+
     var total_size = len(str(total))
     var space = " " if len(prefix) > 0 else ""
-
     var start = now()
 
     @parameter
@@ -99,8 +108,10 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
             flush=True,
         )
 
-    show(0)
+    #show(0)
+    bar_printer.print(0,start)
     for step in range(total):
         if not callback(step):
             break
         show(step + 1)
+        #bar_printer.print(step+1,start)

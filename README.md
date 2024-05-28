@@ -74,27 +74,6 @@ fn main():
 
 The usage of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` method to our repository.
 
-In the following example, the `vectorized_step` method will be called nine times with a `width` parameter of 16, where the argument `i` increases by 16 with each call. This is followed by 15 additional calls with a `width` parameter of 1, with `i` increasing by 1 each time. The functionality matches that of Mojo's `vectorize` method.
-
-We adjusted the sleep time in `vectorized_step` based on the `width` value to better visualize the process. Since we can update the progress bar only after each call of `vectorized_step`, you will notice jumps in the progress of the bar of 16 steps for the first 9 calls.
-
-```python
-from mopro import vectorize_bar
-
-alias simd_width=16
-
-fn main():
-    @parameter
-    fn vectorized_step[width:Int](i: Int):
-        sleep(0.1 * width)
-       
-    vectorize_bar[vectorized_step,simd_width](
-        total=9*16+15
-    )
-```
-
-### Vectorization rocks
-
 Let's compare the performance of the vectorized and non-vectorized versions of a computationally intensive task with the use of `progress_bar` and `vectorize_bar`.
 
 ```python
@@ -155,11 +134,10 @@ Output:
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
 
 ## Changelog
-
-- 2024.05.28
-  - Enabling closure function without `Bool` as return value.
+  
 - 2024.05.28
   - Added `vectorize_bar`
+  - Enabling closure function without `Bool` as return value.
 - 2024.05.27
   - Initial repository setup and commit.
 
