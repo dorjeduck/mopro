@@ -14,8 +14,8 @@ fn progress_bar[callback: fn(Int,/) capturing -> None](
     bar_fill: String = "█",
     bar_empty: String = "░",
 ):
-    fn _f(n:Int,/) capturing -> Bool:
-        callback(n)
+    fn _f(i:Int,/) capturing -> Bool:
+        callback(i)
         return True
     
     progress_bar[_f](
