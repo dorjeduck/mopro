@@ -9,5 +9,5 @@ fn main():
         return True
 
     progress_bar[one_step](
-        size=256
+        total=256
     )

@@ -1,4 +1,3 @@
-
 fn format_float(f: Float32, digits: Int = 2) -> String:
     # return f
     var ff = str(int(f * 10**digits))
@@ -30,4 +29,3 @@ fn format_seconds(seconds: Int) -> String:
         return str(hours) + ":" + minutes_str + ":" + seconds_str
 
     return minutes_str + ":" + seconds_str
-

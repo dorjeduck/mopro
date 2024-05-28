@@ -8,7 +8,7 @@ fn main():
         return True
         
     progress_bar[one_step](
-        size=256,
+        total=256,
         prefix="Epoch:", 
         bar_size=20,
         bar_fill = "🔥",
