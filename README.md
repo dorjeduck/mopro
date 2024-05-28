@@ -47,7 +47,7 @@ fn main():
 
 ### Customizations
 
-Some basic customization options are availabe right now.
+Some basic customization options are availabe.
 
 ```python
 from time import sleep
@@ -103,6 +103,8 @@ fn main():
 
 ## Changelog
 
+- 2024.05.28
+  - Enabling closure function without `Bool` as return value.
 - 2024.05.28
   - Added `vectorize_bar`
 - 2024.05.27
