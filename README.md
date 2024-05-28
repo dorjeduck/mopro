@@ -11,12 +11,10 @@ from time import sleep
 from mopro import progress_bar
 
 fn main():
-
+    
     @parameter
-    fn one_step(i: Int) -> Bool:
-        # your operations here
+    fn one_step(i: Int) -> None:
         sleep(0.01)
-        return True
 
     progress_bar[one_step](
         total=256
@@ -27,7 +25,7 @@ fn main():
 
 ### Terminating the loop
 
-When the callback function returns `False`, the loop will terminate.
+When the callback function returns a `Bool` value, the loop will be terminated when it is `False`.
 
 ```python
 from time import sleep
@@ -58,9 +56,8 @@ from mopro import progress_bar
 fn main():
 
     @parameter
-    fn one_step(i: Int) -> Bool:
+    fn one_step(i: Int):
         sleep(0.01)
-        return True
         
     progress_bar[one_step](
         total=256,

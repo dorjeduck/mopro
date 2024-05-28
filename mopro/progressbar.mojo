@@ -6,9 +6,32 @@ from mopro.utils import (
     mult_string,
 )
 
+fn progress_bar[callback: fn(Int,/) capturing -> None](
+    total: Int,
+    prefix: String = "",
+    postfix: String = "",
+    bar_size: Int = 50,
+    bar_fill: String = "█",
+    bar_empty: String = "░",
+):
+    fn _f(n:Int,/) capturing -> Bool:
+        callback(n)
+        return True
+    
+    progress_bar[_f](
+        total,
+        prefix,
+        postfix,
+        bar_size,
+        bar_fill,
+        bar_empty
+    )
+
+
 fn progress_bar[callback: fn(Int,/) capturing -> Bool](
     total: Int,
     prefix: String = "",
+    postfix: String = "",
     bar_size: Int = 50,
     bar_fill: String = "█",
     bar_empty: String = "░",
@@ -22,6 +45,7 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
     Args:
         total: The number of iterations.
         prefix: Prefix string to display before the progress bar. (default: '')
+        postfix: Postfix string to display after the progress bar. (default: '')
         bar_size: The size of the progress bar. (default: 50)
         bar_fill: Bar fill character.  (default: "█")
         bar_empty: Bar empty character. (default: "░")
@@ -47,13 +71,15 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
         var elapsed_time = (now() - start) / 1e9
         var elapsed_str = format_seconds(int(elapsed_time))
 
-        var rate = (step + 1) / elapsed_time if elapsed_time > 0 else 0
+        var rate = (step + 1) / elapsed_time if elapsed_time > 0 and step> 0 else 0
         var rate_str = format_float(rate) + " it/s"
 
         var remaining_time = (total - step) / rate if rate > 0 else 0
         var remaining_str = format_seconds(int(remaining_time))
 
-        var time_str = "[" + elapsed_str + "<" + remaining_str + ", " + rate_str + "]"
+        var postfix_str = "" if len(postfix) == 0  else ", " + postfix 
+
+        var info_str = "[" + elapsed_str + "<" + remaining_str + ", " + rate_str + postfix_str + "]"
 
         print(
             "\r"
@@ -67,7 +93,8 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
             + "/"
             + total
             + " "
-            + time_str,
+            + info_str,
+            
             end="   ",
             flush=True,
         )
@@ -77,4 +104,3 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
         if not callback(step):
             break
         show(step + 1)
-
