@@ -19,7 +19,7 @@ fn main():
         return True
 
     progress_bar[one_step](
-        total=256
+        size=256
     )
 ```
 
@@ -28,7 +28,6 @@ fn main():
 ### Terminating the loop
 
 When the callback function returns `False`, the loop will terminate.
-
 
 ```python
 from time import sleep
@@ -44,7 +43,7 @@ fn main():
         return i<stop
 
     progress_bar[one_step](
-        total=256
+        size=256
     )
 ```
 
@@ -62,7 +61,7 @@ fn main():
         return True
         
     progress_bar[one_step](
-        total=256,
+        size=256,
         prefix="Epoch:", 
         bar_size=20,
         bar_fill = "🔥",
@@ -77,6 +76,11 @@ fn main():
 - __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo. Hillarious name - love it 🔥
 - __Callback as Closure:__ For the sake of flexibility, we decided to define the callback function as closure. If this approach poses any limitations for you, please let us know.
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
+
+## Changelog
+
+- 2024.05.27
+  - Initial repository setup and commit.
 
 ## License
 

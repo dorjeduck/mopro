@@ -10,5 +10,5 @@ fn main():
         return i<stop
 
     progress_bar[one_step](
-        total=256
+        size=256
     )
