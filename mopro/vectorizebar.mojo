@@ -6,9 +6,31 @@ from mopro.utils import (
     mult_string,
 )
 
+fn vectorize_bar[callback: fn[Int](Int,/) capturing -> None,nelts:Int](
+    total: Int,
+    prefix: String = "",
+    postfix: String = "",
+    bar_size: Int = 50,
+    bar_fill: String = "█",
+    bar_empty: String = "░",
+):
+    fn _f[nelts:Int](iv:Int,/) capturing -> Bool:
+        callback[nelts](iv)
+        return True
+    
+    vectorize_bar[_f,nelts](
+        total,
+        prefix,
+        postfix,
+        bar_size,
+        bar_fill,
+        bar_empty
+    )
+    
 fn vectorize_bar[callback: fn[Int](Int,/) capturing -> Bool,nelts:Int](
     total: Int,
     prefix: String = "",
+    postfix: String = "",
     bar_size: Int = 50,
     bar_fill: String = "█",
     bar_empty: String = "░",
