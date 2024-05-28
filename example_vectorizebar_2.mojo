@@ -24,6 +24,8 @@ fn main():
     fn vectorized_step[width:Int](iv: Int):
         sum+= vec.load[width=width](iv).reduce_add()
 
-    print("\nVectorized Bar:")
+    print("\nVectorize Bar:")
     vectorize_bar[vectorized_step,simd_width](total=NUM,bar_size=20)
     print("\nSum: ", sum)
+
+    vec.free()

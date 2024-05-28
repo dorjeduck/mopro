@@ -95,6 +95,8 @@ fn main():
 
 ### Vectorization rocks
 
+Let's compare performance of the vectorized and non-vectorized versions of a compute intense task.
+
 ```python
 from time import sleep
 from mopro import progress_bar,vectorize_bar
@@ -127,11 +129,13 @@ fn main():
     fn vectorized_step[width:Int](iv: Int):
         sum+= vec.load[width=width](iv).reduce_add()
 
-    print("\nVectorized Bar:")
+    print("\nVectorize Bar:")
 
     vectorize_bar[vectorized_step,simd_width](total=NUM,bar_size=20)
     
     print("\nSum: ", sum)
+
+    vec.free()
 ```
 
 Output:
@@ -140,7 +144,7 @@ Output:
 > 100% |████████████████| 1600015/1600015 [00:32<00:00, 49002.84 it/s]   
 > Sum:  941166.3914757428
 >
-> Vectorized Bar:</br>
+> Vectorize Bar:</br>
 > 100% |████████████████| 1600015/1600015 [00:04<00:00, 395917.44 it/s]   
 > Sum:  941166.39147573942
 
