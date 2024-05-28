@@ -73,7 +73,7 @@ fn main():
 
 ![example2.mojo](./imgs/example2.png)
 
-## vectorize_bar
+## Vectorize Bar
 
 The use of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` function to our repository.
 
