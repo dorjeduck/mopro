@@ -110,20 +110,27 @@ fn main():
         vec[i] = i/(i*1.7+4)
    
     var sum:Scalar[dtype] = 0
+
     @parameter
     fn one_step(i: Int):
         sum+= vec[i]
+
     print("Progress Bar:")
+
     progress_bar[one_step](total=NUM,bar_size=20)
+    
     print("\nSum: ", sum)
 
     sum = 0
+
     @parameter
     fn vectorized_step[width:Int](iv: Int):
         sum+= vec.load[width=width](iv).reduce_add()
 
     print("\nVectorized Bar:")
+
     vectorize_bar[vectorized_step,simd_width](total=NUM,bar_size=20)
+    
     print("\nSum: ", sum)
 ```
 
