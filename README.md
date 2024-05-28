@@ -95,7 +95,7 @@ fn main():
 
 ### Vectorization rocks
 
-Let's compare performance of the vectorized and non-vectorized versions of a compute intense task.
+Let's compare the performance of the vectorized and non-vectorized versions of a computationally intensive task with the use of `progress_bar` and `vectorize_bar`.
 
 ```python
 from time import sleep
