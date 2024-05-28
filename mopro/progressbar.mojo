@@ -16,12 +16,15 @@ fn progress_bar[callback: fn(Int,/) capturing -> Bool](
     """
     A simple progress bar.
 
-    :param total: The number of iterations.
-    :param callback: Function to call in each iteration.
-    :param prefix: Prefix string to display before the progress bar. (default: '')
-    :param bar_size: The size of the progress bar. (default: 50)
-    :param bar_fill: Bar fill character.  (default: "█")
-    :param bar_empty: Bar empty character. (default: "░")
+    Parameters:
+        callback: Function to call in each iteration.
+        
+    Args:
+        total: The number of iterations.
+        prefix: Prefix string to display before the progress bar. (default: '')
+        bar_size: The size of the progress bar. (default: 50)
+        bar_fill: Bar fill character.  (default: "█")
+        bar_empty: Bar empty character. (default: "░")
     """
 
     var total_size = len(str(total))
