@@ -77,7 +77,7 @@ fn main():
 
 The use of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` function to our repository.
 
-In the following example, the one_step method will be called nine times with a width parameter of 16, where the argument i increases by 16 with each call. This is followed by 15 additional calls with a width parameter of 1, with i increasing by 1 each time. We adjusted the sleep time based on the width value to better visualize the process.
+In the following example, the `vectorized_step` method will be called nine times with a `width` parameter of 16, where the argument `i` increases by 16 with each call. This is followed by 15 additional calls with a `width` parameter of 1, with `i` increasing by 1 each time. We adjusted the sleep time in `vectorized_step` based on the `width` value to better visualize the process.
 
 ```python
 from mopro import vectorize_bar
