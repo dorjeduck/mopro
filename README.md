@@ -86,11 +86,11 @@ alias simd_width=16
 
 fn main():
     @parameter
-    fn one_step[width:Int](i: Int) -> Bool:
+    fn vectorized_step[width:Int](i: Int) -> Bool:
         sleep(0.1 * width)
         return True
        
-    vectorize_bar[one_step,simd_width](
+    vectorize_bar[vectorized_step,simd_width](
         total=9*16+15
     )
 ```
