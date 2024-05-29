@@ -26,7 +26,7 @@ fn main():
 
 ### Terminating the loop
 
-When the callback function returns a `Bool` value, the loop will be terminated when it is `False`.
+When the callback function returns a boolean value, the loop will terminate if it returns `False`.
 
 ```python
 from time import sleep
