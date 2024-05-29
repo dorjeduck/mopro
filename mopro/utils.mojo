@@ -1,5 +1,7 @@
 fn format_float(f: Float32, digits: Int = 2) -> String:
-    # return f
+    
+    if f == 0:
+        return "0"
     var ff = str(int(f * 10**digits))
     var l = len(ff)
     return ff[: l - digits] + "." + ff[l - digits :]
