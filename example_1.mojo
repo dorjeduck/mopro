@@ -4,7 +4,7 @@ from mopro import progress_bar,BarSettings
 fn main():
     
     @parameter
-    fn one_step(i: Int) -> None:
+    fn one_step(i: Int):
         sleep(0.01)
 
     progress_bar[one_step](
