@@ -6,7 +6,7 @@ fn main():
 
     @parameter
     fn one_step(i: Int,inout bs:BarSettings):
-        sleep(0.06)
+        sleep(0.01)
         bs.postfix = str(total-i-1) + " steps to go" 
         
     progress_bar[one_step](
