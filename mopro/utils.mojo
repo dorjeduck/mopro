@@ -1,16 +1,17 @@
 fn format_float(f: Float32, digits: Int = 2) -> String:
-    
     if f == 0:
         return "0"
     var ff = str(int(f * 10**digits))
     var l = len(ff)
     return ff[: l - digits] + "." + ff[l - digits :]
 
-fn mult_string(s:String,mul:Int)->String:
+
+fn mult_string(s: String, mul: Int) -> String:
     var res: String = s
-    for _ in range(mul-1):
+    for _ in range(mul - 1):
         res += str(s)
-    return res 
+    return res
+
 
 fn int_to_padded_string(n: Int, width: Int, pad_str: String = " ") -> String:
     var res: String = ""
