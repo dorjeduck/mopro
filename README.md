@@ -158,7 +158,7 @@ As we can see, the vectorized operation took 5 seconds, compared to 40 seconds f
 
 ## Remarks
 
-- __Looking for More Advanced Features?__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for a more advanced progress bar implementation in Mojo. Hillarious name - love it 🔥
+- __Nice, but i prefer tqdm:__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for an advanced progress bar implementation in Mojo that is more similar to [tqdm](https://github.com/tqdm/tqdm). Love the name🔥
 - __Callback as Closure:__ For the sake of flexibility, we decided to define the callback function as closure. If this approach poses any limitations for you, please let us know.
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
 
