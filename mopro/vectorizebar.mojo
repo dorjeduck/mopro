@@ -1,5 +1,5 @@
 from time.time import sleep, now
-from mopro.bar_printer import BarPrinter
+from mopro.bar_printer import BarPrinter,BarSettings
 from mopro.utils import (
     format_float,
     format_seconds,
@@ -15,7 +15,7 @@ fn vectorize_bar[callback: fn[Int](Int,/) capturing -> None,nelts:Int](
     bar_fill: String = "█",
     bar_empty: String = "░",
 ):
-    fn _f[nelts:Int](iv:Int,/) capturing -> Bool:
+    fn _f[nelts:Int](iv:Int,inout bs:BarSettings,/) capturing -> Bool:
         callback[nelts](iv)
         return True
     
@@ -27,8 +27,50 @@ fn vectorize_bar[callback: fn[Int](Int,/) capturing -> None,nelts:Int](
         bar_fill,
         bar_empty
     )
-    
+
+
 fn vectorize_bar[callback: fn[Int](Int,/) capturing -> Bool,nelts:Int](
+    total: Int,
+    prefix: String = "",
+    postfix: String = "",
+    bar_size: Int = 50,
+    bar_fill: String = "█",
+    bar_empty: String = "░",
+):
+    fn _f[nelts:Int](iv:Int,inout bs:BarSettings,/) capturing -> Bool:
+        return callback[nelts](iv)
+    
+    vectorize_bar[_f,nelts](
+        total,
+        prefix,
+        postfix,
+        bar_size,
+        bar_fill,
+        bar_empty
+    )
+
+fn vectorize_bar[callback: fn[Int](Int,inout BarSettings,/) capturing -> None,nelts:Int](
+    total: Int,
+    prefix: String = "",
+    postfix: String = "",
+    bar_size: Int = 50,
+    bar_fill: String = "█",
+    bar_empty: String = "░",
+):
+    fn _f[nelts:Int](iv:Int,inout bs:BarSettings,/) capturing -> Bool:
+        callback[nelts](iv,bs)
+        return True
+    
+    vectorize_bar[_f,nelts](
+        total,
+        prefix,
+        postfix,
+        bar_size,
+        bar_fill,
+        bar_empty
+    )
+    
+fn vectorize_bar[callback: fn[Int](Int,inout BarSettings,/) capturing -> Bool,nelts:Int](
     total: Int,
     prefix: String = "",
     postfix: String = "",
@@ -53,24 +95,24 @@ fn vectorize_bar[callback: fn[Int](Int,/) capturing -> Bool,nelts:Int](
 
     var bar_printer = BarPrinter(
         total,
+        BarSettings(
         prefix,
         postfix,
         bar_size,
         bar_fill,
         bar_empty
+        )
     )
 
     bar_printer.print(0)
 
     for step in range(total//nelts):
-        if not callback[nelts](step*nelts):
+        if not callback[nelts](step*nelts,bar_printer.bar_settings):
             break
         bar_printer.print(step*nelts+1)
     
     for i in range(total%nelts):
         var step = (total//nelts)*nelts + i
-        if not callback[1](step):
+        if not callback[1](step,bar_printer.bar_settings):
             break
         bar_printer.print(step+1)
-
-

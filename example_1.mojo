@@ -1,5 +1,5 @@
 from time import sleep
-from mopro import progress_bar
+from mopro import progress_bar,BarSettings
 
 fn main():
     

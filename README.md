@@ -70,6 +70,29 @@ fn main():
 
 ![example2.mojo](./imgs/example2.png)
 
+### Runtime customization
+
+Often we want to display additional information along with the progress bar, like for example the current value of the loss function in deep learning applications. As shown in the following example, the function which is called each loop step can include a `BarSettings` argument which allows runtime customization of the `Progress Bar`. Here we use the `postfix` setting to display how many iteration are left.
+
+```python
+from time import sleep
+from mopro import progress_bar,BarSettings
+
+fn main():
+    var total = 256
+
+    @parameter
+    fn one_step(i: Int,inout bs:BarSettings):
+        sleep(0.01)
+        bs.postfix = str(total-i-1) + " steps to go" 
+        
+    progress_bar[one_step](
+        total=total,
+        bar_size=20
+    )
+```
+
+
 ## Vectorize Bar
 
 The usage of the Progress Bar is in a way quite similar to Mojo's [vectorize](https://docs.modular.com/mojo/stdlib/algorithm/functional/vectorize) function, making it straightforward to combine the two functionalities. To achieve this, we added the `vectorize_bar` method to our repository.
@@ -134,7 +157,9 @@ Output:
 - __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
 
 ## Changelog
-  
+
+- 2024.05.28
+  - Introducing `BarSettings` for runtime customization of the Progress Bar
 - 2024.05.28
   - Added `vectorize_bar`
   - Enabling closure function without `Bool` as return value.
