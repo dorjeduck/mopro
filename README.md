@@ -14,6 +14,7 @@ fn main():
     
     @parameter
     fn one_step(i: Int) -> None:
+        # your operations here
         sleep(0.01)
 
     progress_bar[one_step](
