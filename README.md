@@ -152,15 +152,9 @@ fn main():
     vec.free()
 ```
 
-Output:
+![example_vectorizebar_2.mojo](./imgs/example_vec2.png)
 
-> Progress Bar:</br>
-> 100% |████████████████| 1600015/1600015 [00:32<00:00, 49002.84 it/s]   
-> Sum:  941166.3914757428
->
-> Vectorize Bar:</br>
-> 100% |████████████████| 1600015/1600015 [00:04<00:00, 395917.44 it/s]   
-> Sum:  941166.39147573942
+As we can see, the vectorized operation took 5 seconds, compared to 40 seconds for the non-vectorized operation.
 
 ## Remarks
 
