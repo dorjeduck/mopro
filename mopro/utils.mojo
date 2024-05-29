@@ -31,38 +31,3 @@ fn format_seconds(seconds: Int) -> String:
         return str(hours) + ":" + minutes_str + ":" + seconds_str
 
     return minutes_str + ":" + seconds_str
-
-
-# ANSI Operations
-alias csi = chr(27)  + "["  # Control Sequence Introducer
-alias delete_line_seq = "%dM"
-
-fn replace(input_string: String, old: String, new: String, count: Int = -1) -> String:
-    if count == 0:
-        return input_string
-
-    var output: String = ""
-    var start = 0
-    var split_count = 0
-
-    for end in range(len(input_string) - len(old) + 1):
-        if input_string[end : end + len(old)] == old:
-            output += input_string[start:end] + new
-            start = end + len(old)
-            split_count += 1
-
-            if count >= 0 and split_count >= count and count >= 0:
-                break
-
-    output += input_string[start:]
-    return output
-
-fn sprintf(text: String, *ints: UInt16) -> String:
-    var output: String = text
-    for i in range(len(ints)):
-        output = replace(output, "%d", String(ints[i]), 1)
-
-    return output
-
-fn delete_line():
-    print(sprintf(csi + delete_line_seq, 1), end="")
