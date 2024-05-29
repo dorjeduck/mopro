@@ -72,7 +72,7 @@ fn main():
 
 ### Runtime customization
 
-Often, we want to display additional information along with the progress bar, such as the current value of the loss function in deep learning applications. As shown in the following example, the callback can include a `BarSettings` argument, which allows runtime customization of the Progress Bar. Here, we use the postfix setting to display the number of iterations remaining.
+Often, we want to display additional information along with the progress bar, such as the current value of the loss function in deep learning applications. As shown in the following example, the callback function can include a `BarSettings` argument, which allows runtime customization of the Progress Bar. Here, we use the postfix setting to display the number of iterations remaining.
 
 ```python
 from time import sleep
@@ -92,6 +92,8 @@ fn main():
     )
 ```
 
+![example3.mojo](./imgs/example3.png)
+
 The following settings are available for runtime customization:
 
 ```rust
@@ -102,8 +104,6 @@ struct BarSettings:
     var bar_fill: String
     var bar_empty: String
 ```
-
-
 
 ## Vectorize Bar
 
