@@ -165,8 +165,9 @@ As we can see, the vectorized operation took 5 seconds, compared to 40 seconds f
 
 ## Changelog
 
-- 2024.05.28
+- 2024.05.29
   - Introducing `BarSettings` for runtime customization of the Progress Bar
+  - Progress Bar reached version 1.0
 - 2024.05.28
   - Added `vectorize_bar`
   - Enabling closure function without `Bool` as return value.
