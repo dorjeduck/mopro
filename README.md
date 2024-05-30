@@ -1,6 +1,6 @@
-# progressbar.🔥
+# mopro 🔥
 
-A lightweight and customizable progress bar for Mojo, meant for tracking the progress of long-running operations in loops.
+`Mopro` is a lightweight and customizable progress bar for Mojo, meant for tracking the progress of long-running operations in loops.
 
 ## Usage
 
