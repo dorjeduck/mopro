@@ -1,6 +1,6 @@
 # mopro 🔥
 
-`Mopro` is a lightweight and customizable progress bar for Mojo, meant for tracking the progress of long-running operations in loops.
+A lightweight and customizable progress bar for Mojo, meant for tracking the progress of long-running operations in loops.
 
 ## Usage
 
@@ -165,6 +165,8 @@ As we can see, the vectorized operation took 5 seconds, compared to 40 seconds f
 
 ## Changelog
 
+- 2024.05.29
+  - Renamed repo to `mopro`
 - 2024.05.29
   - Introducing `BarSettings` for runtime customization of the Progress Bar
   - Progress Bar reached version 1.0
