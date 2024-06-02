@@ -1,6 +1,6 @@
 from time.time import sleep, now
-from mopro.bar_printer import BarPrinter, BarSettings
-from mopro.utils import (
+from .bar_printer import BarPrinter, BarSettings
+from .utils import (
     format_float,
     format_seconds,
     int_to_padded_string,

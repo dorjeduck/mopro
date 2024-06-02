@@ -1,5 +1,5 @@
 from time import now
-from mopro.utils import (
+from .utils import (
     format_float,
     format_seconds,
     int_to_padded_string,
