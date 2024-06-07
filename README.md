@@ -1,8 +1,10 @@
 # mopro 🔥
 
-A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/mojo/), meant for tracking the progress of long-running operations in loops.
+A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/mojo/), meant for tracking the progress of long-running operations in loops. Based on Mojo version 24.4 . 
 
 ## Usage
+
+**Prerequisite**: Ensure you have [Mojo](https://docs.modular.com/mojo/) 24.4 installed.
 
 In its simplest use case, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
 
@@ -164,6 +166,8 @@ As we can see, the vectorized operation took 5 seconds, compared to 40 seconds f
 
 ## Changelog
 
+- 2024.06.07
+  - Updated to Mojo 24.4
 - 2024.05.29
   - Renamed repo to `mopro`
 - 2024.05.29

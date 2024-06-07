@@ -75,7 +75,7 @@ struct BarPrinter:
             + " "
             + step_str
             + "/"
-            + self.total
+            + str(self.total)
             + " "
             + info_str,
             end="   ",
