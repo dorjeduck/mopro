@@ -103,5 +103,6 @@ fn vectorize_bar[
     for i in range(total % nelts):
         var step = (total // nelts) * nelts + i
         if not callback[1](step, bar_printer.bar_settings):
+            bar_printer.print(step)
             break
         bar_printer.print(step + 1)
