@@ -106,3 +106,4 @@ fn vectorize_bar[
             bar_printer.print(step)
             break
         bar_printer.print(step + 1)
+    print("")
