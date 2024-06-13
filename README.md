@@ -1,6 +1,6 @@
 # mopro 🔥
 
-A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/mojo/), meant for tracking the progress of long-running operations in loops. Based on Mojo version 24.4 . 
+A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/mojo/), meant for tracking the progress of long-running operations in loops.
 
 ## Usage
 
