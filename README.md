@@ -7,7 +7,7 @@ A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/
 **Prerequisite**:
 
 * Ensure that the `Magic` command line tool is installed by following the [Modular Docs](https://docs.modular.com/magic)
-* Run `magic shell` within the cloned repository to install Mojo 24.5 and enter the environment where you can run the example apps.
+* Run `magic shell` within the cloned repository to install Mojo 24.5 and enter an environment in which you can run the mojo apps.
 
 In its simplest use case, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
 
