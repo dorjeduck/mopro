@@ -4,7 +4,10 @@ A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/
 
 ## Usage
 
-**Prerequisite**: Ensure you have [Mojo](https://docs.modular.com/mojo/) 24.4 installed.
+**Prerequisite**:
+
+* Ensure that Magic is installed by following the [Modular Docs](https://docs.modular.com/)
+* Run ''magic shell'' within the cloned repository to install Mojo 24.5 and enter the environment where you can run Mojo apps.
 
 In its simplest use case, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
 
@@ -161,23 +164,25 @@ As we can see, the vectorized operation took 5 seconds, compared to 40 seconds f
 
 ## Remarks
 
-- __Nice, but i prefer tqdm:__ Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for an advanced progress bar implementation in Mojo that is more similar to [tqdm](https://github.com/tqdm/tqdm). Love the name🔥
-- __Contribute and Improve!__ Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
+* **Nice, but i prefer tqdm:** Check out [Are We Done Yet](https://github.com/Ryul0rd/awdy) for an advanced progress bar implementation in Mojo that is more similar to [tqdm](https://github.com/tqdm/tqdm). Love the name🔥
+* **Contribute and Improve!** Feel free to modify and use the source code as you like. If you have enhancements that could benefit others, your pull requests are highly encouraged.
 
 ## Changelog
 
-- 2024.06.07
-  - Updated to Mojo 24.4
-- 2024.05.29
-  - Renamed repo to `mopro`
-- 2024.05.29
-  - Introducing `BarSettings` for runtime customization of the Progress Bar
-  - Progress Bar reached version 1.0
-- 2024.05.28
-  - Added `vectorize_bar`
-  - Enabling closure function without `Bool` as return value.
-- 2024.05.27
-  - Initial repository setup and commit.
+* 2024.09.16
+  * Updated to Mojo 24.5
+* 2024.06.07
+  * Updated to Mojo 24.4
+* 2024.05.29
+  * Renamed repo to `mopro`
+* 2024.05.29
+  * Introducing `BarSettings` for runtime customization of the Progress Bar
+  * Progress Bar reached version 1.0
+* 2024.05.28
+  * Added `vectorize_bar`
+  * Enabling closure function without `Bool` as return value.
+* 2024.05.27
+  * Initial repository setup and commit.
 
 ## License
 

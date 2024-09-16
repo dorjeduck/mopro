@@ -1,4 +1,4 @@
-fn format_float(f: Float32, digits: Int = 2) -> String:
+fn format_float(f: Float64, digits: Int = 2) -> String:
     if f == 0:
         return "0"
     var ff = str(int(f * 10**digits))
