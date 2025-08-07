@@ -2,12 +2,15 @@
 
 A lightweight and customizable progress bar for [Mojo](https://docs.modular.com/mojo/), meant for tracking the progress of long-running operations in loops.
 
+> **Note**: This project is based on the stable Mojo 25.5 release.
+
+
 ## Usage
 
 **Prerequisite**:
 
-* Ensure that the `Magic` command line tool is installed by following the [Modular Docs](https://docs.modular.com/magic).
-* Run `magic shell` within the cloned repository to install Mojo 24.5 and to activate the project's virtual environment in which you can run the mojo apps.
+* If you don't have it, install [pixi](https://pixi.sh/latest/):
+* Run `pixi shell` within the root of the cloned repository to install the project's dependencies (Mojo 25.5), and to activate the project's virtual environment in which you can run the mojo apps.
 
 In its simplest use case, you specify the total number of iterations and provide a callback function as parameter that will be called for each iteration:
 
@@ -90,7 +93,7 @@ fn main():
     @parameter
     fn one_step(i: Int,inout bs:BarSettings):
         sleep(0.01)
-        bs.postfix = str(total-i-1) + " steps to go" 
+        bs.postfix = String(total-i-1) + " steps to go" 
         
     progress_bar[one_step](
         total=total,
@@ -169,6 +172,8 @@ As we can see, the vectorized operation took 5 seconds, compared to 40 seconds f
 
 ## Changelog
 
+* 2025.08.07
+  * Updated to Mojo 25.5
 * 2024.09.16
   * Updated to Mojo 24.5
 * 2024.06.07

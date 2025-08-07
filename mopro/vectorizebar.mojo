@@ -18,7 +18,7 @@ fn vectorize_bar[
     bar_fill: String = "█",
     bar_empty: String = "░",
 ):
-    fn _f[nelts: Int](iv: Int, inout bs: BarSettings, /) capturing -> Bool:
+    fn _f[nelts: Int](iv: Int, mut bs: BarSettings, /) capturing -> Bool:
         callback[nelts](iv)
         return True
 
@@ -37,7 +37,7 @@ fn vectorize_bar[
     bar_fill: String = "█",
     bar_empty: String = "░",
 ):
-    fn _f[nelts: Int](iv: Int, inout bs: BarSettings, /) capturing -> Bool:
+    fn _f[nelts: Int](iv: Int, mut bs: BarSettings, /) capturing -> Bool:
         return callback[nelts](iv)
 
     vectorize_bar[_f, nelts](
@@ -46,7 +46,7 @@ fn vectorize_bar[
 
 
 fn vectorize_bar[
-    callback: fn[Int] (Int, inout BarSettings, /) capturing -> None, nelts: Int
+    callback: fn[Int] (Int, mut BarSettings, /) capturing -> None, nelts: Int
 ](
     total: Int,
     prefix: String = "",
@@ -55,7 +55,7 @@ fn vectorize_bar[
     bar_fill: String = "█",
     bar_empty: String = "░",
 ):
-    fn _f[nelts: Int](iv: Int, inout bs: BarSettings, /) capturing -> Bool:
+    fn _f[nelts: Int](iv: Int, mut bs: BarSettings, /) capturing -> Bool:
         callback[nelts](iv, bs)
         return True
 
@@ -65,7 +65,7 @@ fn vectorize_bar[
 
 
 fn vectorize_bar[
-    callback: fn[Int] (Int, inout BarSettings, /) capturing -> Bool, nelts: Int
+    callback: fn[Int] (Int, mut BarSettings, /) capturing -> Bool, nelts: Int
 ](
     total: Int,
     prefix: String = "",

@@ -6,8 +6,8 @@ fn main():
     var total = 256
 
     @parameter
-    fn one_step(i: Int, inout bs: BarSettings):
+    fn one_step(i: Int, mut bs: BarSettings):
         sleep(0.01)
-        bs.postfix = str(total - i - 1) + " steps to go"
+        bs.postfix = String(total - i - 1) + " steps to go"
 
     progress_bar[one_step](total=total, bar_size=20)
